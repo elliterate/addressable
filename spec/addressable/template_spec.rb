@@ -738,7 +738,7 @@ describe Addressable::Template do
       end
       it "builds a new pattern with two=nil" do
         expect(subject.partial_expand(two: nil).pattern).to eq(
-          "http://example.com/{?one}{&three}/"
+          "http://example.com/{?one,three}/"
         )
       end
       it "builds a new pattern with one=nil and two=nil" do
@@ -758,7 +758,7 @@ describe Addressable::Template do
       end
       it "builds a new pattern with one=nil" do
         expect(subject.partial_expand(one: nil).pattern).to eq(
-          "http://example.com/{?two}{&three}/"
+          "http://example.com/{?two,three}/"
         )
       end
     end
